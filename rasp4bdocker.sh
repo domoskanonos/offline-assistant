@@ -35,3 +35,6 @@ sudo apt install -y python3-pip libffi-dev
 # Install Docker Compose from pip (using Python3)
 # This might take a while
 sudo pip3 install docker-compose
+
+# add pi user to docker group
+sudo usermod -aG docker pi
