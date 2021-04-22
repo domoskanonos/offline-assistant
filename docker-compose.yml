@@ -1,86 +1,11 @@
 services:
-  offline-server-portainer:
-    image: portainer/portainer
-    #command: -H unix:///var/run/docker.sock
-    restart: always
-    ports:
-      - 9000:9000
-      - 8000:8000
-    #volumes:
-      #- /_store/portainer/var/run/docker.sock:/var/run/docker.sock
-      #- /_store/portainer/data:/data
-  offline-server-dozzle:
-    container_name: dozzle
-    image: amir20/dozzle:latest
-    #volumes:
-    #  - /var/run/docker.sock:/var/run/docker.sock
-    ports:
-      - 9999:8080
-  offline-server-heimdall:
-    image: ghcr.io/linuxserver/heimdall
-    container_name: heimdall
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-    #volumes:
-      #- </path/to/appdata/config>:/config
-    ports:
-      - 80:80
-      - 443:443
-    restart: unless-stopped 
-  offline-server-mariadb:
-    image: mariadb
-    restart: always
-    #ports:
-      #- 3306:3306
-    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
-    #volumes:
-      #- /_store/mariadb:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=${defaultpassword}
-  offline-server-kiwix:
-    image: kiwix/kiwix-serve
-    restart: always
-    ports: 
-      - 8082:80 
-    #environment: 
-      #- DOWNLOAD=https://ftp.fau.de/kiwix/zim/wikipedia/wikipedia_de_top_maxi_2021-03.zim
-  offline-server-nextcloud:
-    image: nextcloud
-    restart: always
-    ports:
-      - 8080:80
-    links:
-      - offline-server-mariadb
-    #volumes:
-      #- /_store/nextcloud:/var/www/html
-    environment:
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=${defaultpassword}
-      - MYSQL_HOST=offline-server-mariadb
-      - NEXTCLOUD_ADMIN_USER=root
-      - NEXTCLOUD_ADMIN_PASSWORD=${defaultpassword}
-      - NEXTCLOUD_TRUSTED_DOMAINS=localhost, 192.168.178.32
-  offline-server-node-red:
-    image: nodered/node-red:latest
-    environment:
-      - TZ=Europe/Amsterdam
-    ports:
-      - 1880:1880
-    #networks:
-      #- node-red-net
-    #volumes:
-      #- ~/node-red/data:/data
   offline-server-rhasspy:
     image: "rhasspy/rhasspy"
-    #container_name: rhasspy
     restart: unless-stopped
-    #volumes:
-        #- "$HOME/.config/rhasspy/profiles:/profiles"
-        #- "/etc/localtime:/etc/localtime:ro"
+    volumes:
+        - "$HOME/_store/rhasspy/profiles:/profiles"
     ports:
         - "12101:12101"
-    #devices:
-        #- "/dev/snd:/dev/snd"
+    devices:
+        - "/dev/snd:/dev/snd"
     command: --profile de --user-profiles /profiles
