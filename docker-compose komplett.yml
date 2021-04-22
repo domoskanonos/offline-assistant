@@ -30,7 +30,7 @@ services:
       - 443:443
     restart: unless-stopped 
   offline-server-mariadb:
-    image: mariadb
+    image: mariadb:arm32v6-latest
     restart: always
     #ports:
       #- 3306:3306
