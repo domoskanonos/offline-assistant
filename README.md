@@ -1,2 +1,30 @@
-# offline-assistant
-complete offline voice assistant
+# Install operation system
+## download image from
+    https://www.raspberrypi.org/software/operating-systems/
+## install with balenaEtcher, format with Fat32
+    https://www.balena.io/etcher/
+## create empty ssh file named "ssh" in root folder of card/drive to activate ssh
+## connect to network and start, you can now controll via ssh, init user is pi, init password is raspberry
+
+# rasperry pi 4b install file
+to install on a rasperry pi 4b use the script:
+    rasp4binstall.sh
+
+# run
+docker-compose --env-file ./env.conf up
+
+# run detached
+docker-compose --env-file ./env.conf up -d
+
+# stop
+docker-compose down --remove-orphans
+
+
+## nextcloud config
+    user=root
+    host=offline-server-mariadb
+
+    
+
+
+
