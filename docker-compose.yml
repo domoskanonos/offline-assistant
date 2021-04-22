@@ -3,9 +3,7 @@ services:
     image: "synesthesiam/marytts:5.2"
     restart: unless-stopped
     ports:
-      - 59125:59125    
-    devices:
-      - "/dev/snd:/dev/snd"
+      - 59125:59125
   offline-server-rhasspy:
     image: "rhasspy/rhasspy"
     restart: unless-stopped
