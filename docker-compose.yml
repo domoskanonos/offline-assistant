@@ -8,13 +8,33 @@ services:
       - 8000:8000
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /_store/portainer/data:/data
+      - $HOME/_store/portainer/data:/data
   offline-server-dozzle:
     image: amir20/dozzle:latest
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - 9999:8080
+  offline-server-node-red:
+    image: nodered/node-red:latest
+    environment:
+      - TZ=Europe/Amsterdam
+    ports:
+      - 1880:1880
+    volumes:
+      - $HOME/_store/node-red/data:/data  
+  offline-server-heimdall:
+    image: ghcr.io/linuxserver/heimdall
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - $HOME/_store/heimdall/config:/config
+    ports:
+      - 80:80
+      #- 443:443
+    restart: unless-stopped
   offline-marytts:
     image: "synesthesiam/marytts:5.2"
     restart: unless-stopped
