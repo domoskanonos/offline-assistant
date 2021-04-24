@@ -16,7 +16,7 @@ services:
     ports:
       - 9999:8080
   offline-server-node-red:
-    image: nodered/node-red:latest
+    image: nodered/arm32v7/node:12-alpine
     environment:
       - TZ=Europe/Amsterdam
     ports:
