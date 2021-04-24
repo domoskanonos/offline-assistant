@@ -1,3 +1,6 @@
+# setup
+    sudo raspi-config
+
 # shutdown
     sudo shutdown -r 0
     sudo shutdown -r now
@@ -7,5 +10,9 @@
 
 # reboot
     sudo reboot
+
+- network config
+    sudo raspi-config
+  
 
     
