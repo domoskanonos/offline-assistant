@@ -38,3 +38,6 @@ sudo pip3 install docker-compose
 
 # add pi user to docker group
 sudo usermod -aG docker pi
+
+# install mp3 player
+sudo apt-get install omxplayer
