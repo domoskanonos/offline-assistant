@@ -24,7 +24,13 @@ docker-compose down --remove-orphans
     user=root
     host=offline-server-mariadb
 
+port 3306
+
+db nextcloud
+
+Node Red Volumen Rights to set !! Important
     
+    /sudo chown -R 1000:1000 home/pi/_store/node-red/data
 
 
 
