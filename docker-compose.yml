@@ -76,6 +76,8 @@ services:
       - $HOME/_store/nextcloud/data:/opt
       - $HOME/_store/nextcloud/html:/var/www/html
     environment:
+      - PUID=1000
+      - PGID=1000
       - NEXTCLOUD_DATA_DIR=/opt
       - MYSQL_USER=root
       - MYSQL_PASSWORD=${defaultpassword}
