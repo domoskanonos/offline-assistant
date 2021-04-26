@@ -62,6 +62,8 @@ services:
     volumes:
       - $HOME/_store/mariadb:/var/lib/mysql
     environment:
+      - PUID=1000
+      - PGID=1000
       - MYSQL_ROOT_PASSWORD=${defaultpassword}  
   offline-server-nextcloud:
     image: nextcloud
