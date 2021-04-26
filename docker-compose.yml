@@ -60,7 +60,7 @@ services:
       - 3306:3306
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
     volumes:
-      - $HOME/_store/mariadb:/var/lib/mysql
+      - $HOME/_store/mariadb:/config
     environment:
       - PUID=1000
       - PGID=1000
