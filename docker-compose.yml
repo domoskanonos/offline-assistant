@@ -31,7 +31,7 @@ services:
       - TZ=Europe/London
     volumes:
       - $HOME/_store/heimdall/config:/config
-      - $HOME/_store/heimdall/public:/public
+      - $HOME/_store/heimdall/public:/var/www/localhost/heimdall/public
     ports:
       - 80:80
       #- 443:443
