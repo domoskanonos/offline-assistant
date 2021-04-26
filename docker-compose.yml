@@ -73,10 +73,10 @@ services:
     links:
       - offline-server-mariadb
     volumes:
-      - $HOME/_store/nextcloud/data:/home
+      - $HOME/_store/nextcloud/data:/opt
       - $HOME/_store/nextcloud/html:/var/www/html
     environment:
-      - NEXTCLOUD_DATA_DIR=/home
+      - NEXTCLOUD_DATA_DIR=/opt
       - MYSQL_USER=root
       - MYSQL_PASSWORD=${defaultpassword}
       - MYSQL_HOST=offline-server-mariadb
