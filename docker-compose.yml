@@ -51,7 +51,7 @@ services:
         - "/dev/snd:/dev/snd"
     command: --profile de --user-profiles /profiles
   offline-server-mariadb:
-    image: mariadb:arm64v8
+    image: arm64v8/mariadb:latest
     restart: always
     ports:
       - 3306:3306
