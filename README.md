@@ -11,10 +11,10 @@ to install on a rasperry pi 4b use the script:
     rasp4binstall.sh
 
 # run
-docker-compose --env-file ./env.conf up
+docker-compose --env-file ./env.conf up --remove-orphans 
 
 # run detached
-docker-compose --env-file ./env.conf up -d
+docker-compose --env-file ./env.conf up -d --remove-orphans 
 
 # stop
 docker-compose down --remove-orphans
