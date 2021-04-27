@@ -34,19 +34,6 @@ services:
         #- "./conf.d:/mosquitto/config/conf.d"
         #- "/mosquitto/data"
         #- "/mosquitto/log"
-    restart: unless-stopped 
-  offline-server-heimdall:
-    image: ghcr.io/linuxserver/heimdall
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-    volumes:
-      - $HOME/_store/heimdall/config:/config
-      - $HOME/_store/heimdall/public:/var/www/localhost/heimdall/public
-    ports:
-      - 8081:80
-      #- 443:443
     restart: unless-stopped
   offline-marytts:
     image: "synesthesiam/marytts:5.2"
@@ -92,10 +79,11 @@ services:
       - MYSQL_HOST=offline-server-mariadb
       - NEXTCLOUD_ADMIN_USER=root
       - NEXTCLOUD_ADMIN_PASSWORD=${defaultpassword}
-      - NEXTCLOUD_TRUSTED_DOMAINS=localhost, 192.168.178.60, 192.168.178.61
+      - NEXTCLOUD_TRUSTED_DOMAINS=localhost, 192.168.178.60/*, 192.168.178.61/*
   offline-server-nginx: 
     image: nginx:latest
     volumes:
-      - $HOME/_store/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      #- $HOME/_store/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - $HOME/_store/html:/usr/share/nginx/html
     ports:
       - 80:80
