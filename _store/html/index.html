@@ -1,21 +1,22 @@
 <html>
-<head>
-<script>
-
-var host = window.location.hostname;
-
-var a = document.createElement('a');
-var linkText = document.createTextNode("Portainer");
-a.appendChild(linkText);
-a.title = "Portainer";
-a.href = host+":9000";
-document.body.appendChild(a);
-
-</script>
-
-</head>
-<body>
-
-</body>
-
+  <head> </head>
+  <body>
+    <script>
+      function createLink(text, port) {
+        var a = document.createElement("a");
+        var linkText = document.createTextNode(text);
+        a.appendChild(linkText);
+        a.title = text;
+        a.setAttribute("href", window.location.origin + ":" + port);
+        a.target = "_BLANK";
+        document.body.appendChild(a);
+      }
+      createLink("Nextcloud", 8080);
+      createLink("Portainer", 9000);
+      createLink("Rhasspy", 12101);
+      createLink("MarryTTS", 59125);
+      createLink("Node-Red", 1880);
+      createLink("Dozzle", 9999);
+    </script>
+  </body>
 </html>
