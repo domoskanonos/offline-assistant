@@ -79,7 +79,7 @@ services:
       - MYSQL_HOST=offline-server-mariadb
       - NEXTCLOUD_ADMIN_USER=root
       - NEXTCLOUD_ADMIN_PASSWORD=${defaultpassword}
-      - NEXTCLOUD_TRUSTED_DOMAINS=localhost, 192.168.178.60/*, 192.168.178.61/*
+      - NEXTCLOUD_TRUSTED_DOMAINS=localhost, 192.168.178.60, 192.168.178.61
   offline-server-kiwix:
     image: kiwix/kiwix-serve
     restart: always
