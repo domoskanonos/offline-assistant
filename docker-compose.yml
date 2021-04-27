@@ -84,6 +84,6 @@ services:
     image: nginx:latest
     volumes:
       #- $HOME/_store/nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - $HOME/_store/html:/usr/share/nginx/html
+      - $HOME/_store/nginx/html:/usr/share/nginx/html
     ports:
       - 80:80
