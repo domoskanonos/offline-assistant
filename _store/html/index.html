@@ -10,6 +10,7 @@
         a.setAttribute("href", window.location.origin + ":" + port);
         a.target = "_BLANK";
         document.body.appendChild(a);
+        document.body.appendChild(document.createElement("br"));
       }
       createLink("Nextcloud", 8080);
       createLink("Portainer", 9000);
