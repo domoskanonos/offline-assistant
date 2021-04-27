@@ -82,6 +82,7 @@ services:
       - NEXTCLOUD_TRUSTED_DOMAINS=localhost, 192.168.178.60/*, 192.168.178.61/*
   offline-server-nginx: 
     image: nginx:latest
+    restart: unless-stopped
     volumes:
       - $HOME/_store/nginx/html:/usr/share/nginx/html
     ports:
