@@ -1,6 +1,21 @@
-<a href="/rhasspy" target="_blank">Rhasspy</a>
-<br/>
-<a href="/nextcloud" target="_blank">Nextcloud</a>
-<br/>
-<a href="/portainer" target="_blank">Portainer</a>
-<br/>
+<html>
+<head>
+<script>
+
+var host = window.location.hostname;
+
+var a = document.createElement('a');
+var linkText = document.createTextNode("Portainer");
+a.appendChild(linkText);
+a.title = "Portainer";
+a.href = host+":9000";
+document.body.appendChild(a);
+
+</script>
+
+</head>
+<body>
+
+</body>
+
+</html>
