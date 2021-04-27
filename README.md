@@ -34,3 +34,6 @@ Node Red Volumen Rights to set !! Important
 
 
 
+
+zim File for Wiki
+#- DOWNLOAD=https://ftp.fau.de/kiwix/zim/wikipedia/wikipedia_de_top_maxi_2021-03.zim
