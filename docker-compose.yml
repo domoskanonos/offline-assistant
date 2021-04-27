@@ -24,7 +24,17 @@ services:
       - 1880:1880
     restart: unless-stopped
     volumes:
-      - $HOME/_store/node-red/data:/data  
+      - $HOME/_store/node-red/data:/data 
+  offline-server-mosquitto:
+    image: eclipse-mosquitto:latest
+    ports:
+      - "1883:1883/tcp"
+    #volumes:
+        #- "./mosquitto.conf:/mosquitto/config/mosquitto.conf"
+        #- "./conf.d:/mosquitto/config/conf.d"
+        #- "/mosquitto/data"
+        #- "/mosquitto/log"
+    restart: unless-stopped 
   offline-server-heimdall:
     image: ghcr.io/linuxserver/heimdall
     environment:
