@@ -26,7 +26,6 @@ sudo systemctl start docker
 
 sudo docker run --rm hello-world
 
-
 # Docker Compoose
 # Install required packages
 sudo apt update
@@ -40,7 +39,7 @@ sudo pip3 install docker-compose
 sudo usermod -aG docker pi
 
 # install mp3 player
-sudo apt-get install omxplayer
+sudo apt-get install mpg123
 
 # install node red
 yes | bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
