@@ -19,12 +19,12 @@
 
 - network config
     sudo raspi-config
-  
-
 
 # Lautstärke
-amixer -c 0 sset Headphone,0 20%
-amixer -c 0 scontrols
+    amixer -c 0 sset Headphone,0 20%
+    amixer -c 0 scontrols
 
+# scan wlan
+    sudo iwlist wlan0 scan
 
 
