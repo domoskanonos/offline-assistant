@@ -7,6 +7,9 @@
 ## connect to network and start, you can now controll via ssh, init user is pi, init password is raspberry
 
 # rasperry pi 4b install file
+
+yes | bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+
 to install on a rasperry pi 4b use the script:
     rasp4binstall.sh
 
