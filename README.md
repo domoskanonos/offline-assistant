@@ -8,7 +8,7 @@
 
 # rasperry pi 4b install file
 
-yes | bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+yes | bash <(curl -sL https://raw.githubusercontent.com/domoskanonos/offline-assistant/main/rasp4binstall.sh)
 
 to install on a rasperry pi 4b use the script:
     rasp4binstall.sh
