@@ -8,6 +8,7 @@ sudo apt install -y \
 sudo apt install -y git
 
 # clone domoskanonos offline-server repo and copy root resources
+if [ -d "~/offline-assistant" ]; then rm -Rf ~/offline-assistant; fi
 git clone https://github.com/domoskanonos/offline-assistant.git
 cd offline-assistant
 sudo cp -r ./root/home /
@@ -23,12 +24,14 @@ sudo apt install python-virtualenv
 virtualenv --system-site-packages ~/env
 
 # install respeaker driver
+if [ -d "~/seeed-voicecard" ]; then rm -Rf ~/seeed-voicecard; fi
 git clone https://github.com/HinTak/seeed-voicecard.git
 cd seeed-voicecard
 sudo ./install.sh
 cd ..
 
 # install respeaker led driver
+if [ -d "~/4mics_hat" ]; then rm -Rf ~/4mics_hat; fi
 git clone https://github.com/respeaker/4mics_hat.git
 cd 4mics_hat
 source ~/env/bin/activate
