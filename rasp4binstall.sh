@@ -13,6 +13,7 @@ git clone https://github.com/domoskanonos/offline-assistant.git
 cd offline-assistant
 sudo cp -r ./root/home /
 sudo cp -r ./root/var /
+sudo cp -r ./root/etc /
 cd ..
 
 # install python
@@ -51,14 +52,12 @@ yes | bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installer
 sudo systemctl enable nodered.service
 
 # install mosquitto
-sudo apt install -y mosquitto
+sudo apt install -y mosquitto mosquitto-clients
+sudo systemctl enable mosquitto.service
 
 # install rhasspy     
-curl -LJO https://github.com/rhasspy/rhasspy/releases/download/v2.5.10/rhasspy_2.5.10_armhf.deb > rhasspy_2.5.10_armhf.deb
+wget -O rhasspy_2.5.10_armhf.deb https://github.com/rhasspy/rhasspy/releases/download/v2.5.10/rhasspy_2.5.10_armhf.deb
 sudo apt install -y ./rhasspy_2.5.10_armhf.deb
 
-# install grafana
-wget https://github.com/fg2it/grafana-on-raspberry/releases/download/v5.1.4/grafana_5.1.4_armhf.deb
-sudo dpkg -i ./grafana_5.1.4_armhf.deb
-sudo /bin/systemctl daemon-reload
-sudo /bin/systemctl enable grafana-server
+systemctl daemon-reload
+sudo systemctl enable rhasspy.service
