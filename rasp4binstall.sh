@@ -8,16 +8,16 @@ sudo apt install -y \
 sudo apt install -y git
 
 # clone domoskanonos offline-server repo and copy root resources
-_OFFLINE_SERVER_DIR="/etc/httpd/"
+_OFFLINE_SERVER_DIR="~/offline-assistant/"
 if [ -d "$_OFFLINE_SERVER_DIR" ]; then
   echo "Installing offline-server in ${_OFFLINE_SERVER
 _DIR}..."
   git clone https://github.com/domoskanonos/offline-assistant.git
 fi
 cd offline-assistant
-sudo cp ./root /
+sudo cp -r ./root/home /
+sudo cp -r ./root/var /
 cd ..
-
 
 # install python
 sudo apt install -y python3-pip
@@ -34,7 +34,7 @@ sudo ./install.sh
 cd ..
 
 # install respeaker led driver
-_4MIC_DIR="/etc/httpd/"
+_4MIC_DIR="~/4mics_hat/"
 if [ -d "$_4MIC_DIR" ]; then
   echo "Installing 4MIC LED files in ${_4MIC_DIR}..."
   git clone https://github.com/respeaker/4mics_hat.git
