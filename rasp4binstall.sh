@@ -40,11 +40,11 @@ yes | bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installer
 sudo systemctl enable nodered.service
 
 # install docker
-sudo apt apt-transport-https
-sudo apt ca-certificates
-sudo apt curl
-sudo apt gnupg2
-sudo apt software-properties-common
+sudo apt install -y apt-transport-https
+sudo apt install -y ca-certificates
+sudo apt install -y curl
+sudo apt install -y gnupg2
+sudo apt install -y software-properties-common
 
 curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
 
@@ -53,8 +53,8 @@ echo "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/
     sudo tee /etc/apt/sources.list.d/docker.list
 
 sudo apt install -y --no-install-recommends
-sudo apt docker-ce
-sudo apt cgroupfs-mount
+sudo apt install -y docker-ce
+sudo apt install -y cgroupfs-mount
 
 sudo systemctl enable docker
 sudo systemctl start docker
