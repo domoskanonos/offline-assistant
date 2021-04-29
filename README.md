@@ -36,7 +36,14 @@ Node Red Volumen Rights to set !! Important
     /sudo chown -R 1000:1000 home/pi/_store/node-red/data
 
 
+Netzwerkprobleme Docker:
+https://www.youtube.com/watch?v=TeKKExBWiog
+
+
 
 
 zim File for Wiki
 #- DOWNLOAD=https://ftp.fau.de/kiwix/zim/wikipedia/wikipedia_de_top_maxi_2021-03.zim
+
+
+/usr/lib/rhasspy/share/rhassp

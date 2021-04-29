@@ -35,40 +35,20 @@ cd ..
 # install mp3 player
 sudo apt-get install mpg123
 
+
+# install nginx
+sudo apt install -y nginx
+sudo service nginx start
+
 # install node red
 yes | bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
 sudo systemctl enable nodered.service
 
-# install docker
-sudo apt install -y apt-transport-https
-sudo apt install -y ca-certificates
-sudo apt install -y curl
-sudo apt install -y gnupg2
-sudo apt install -y software-properties-common
+# install mosquitto
+sudo apt install -y mosquitto
 
-curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
+# install rhasspy     
+curl -LJO https://github.com/rhasspy/rhasspy/releases/download/v2.5.10/rhasspy_2.5.10_armhf.deb > rhasspy_2.5.10_armhf.deb
+sudo apt install -y ./rhasspy_2.5.10_armhf.deb
 
-echo "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") \
-     $(lsb_release -cs) stable" | \
-    sudo tee /etc/apt/sources.list.d/docker.list
-
-sudo apt install -y --no-install-recommends
-sudo apt install -y docker-ce
-sudo apt install -y cgroupfs-mount
-
-sudo systemctl enable docker
-sudo systemctl start docker
-
-sudo docker run --rm hello-world
-
-# install docker compoose
-sudo apt install -y python3-pip libffi-dev
-sudo pip3 install docker-compose
-sudo usermod -aG docker pi
-
-# install domoskanonos offline-assistant repo and run docker-compose up
-git clone https://github.com/domoskanonos/offline-assistant.git
-cd offline-assistant
-sudo ./run.sh
-sudo ./stop.sh
-cd ..
+systemctl --user start rhasspy
