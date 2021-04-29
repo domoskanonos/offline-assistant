@@ -4,7 +4,7 @@
     },
     "handle": {
         "remote": {
-            "url": "http://192.168.178.61:1880/intent"
+            "url": "http://localhost:1880/intent"
         },
         "system": "remote"
     },
@@ -26,7 +26,6 @@
     "text_to_speech": {
         "marytts": {
             "locale": "de",
-            "url": "http://offline-marytts:59125/process",
             "voice": "bits1-hsmm"
         },
         "system": "nanotts"

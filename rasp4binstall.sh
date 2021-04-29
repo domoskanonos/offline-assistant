@@ -42,7 +42,6 @@ cd ..
 # install mp3 player
 sudo apt-get install mpg123
 
-
 # install nginx
 sudo apt install -y nginx
 sudo service nginx start
@@ -58,6 +57,4 @@ sudo systemctl enable mosquitto.service
 # install rhasspy     
 wget -O rhasspy_2.5.10_armhf.deb https://github.com/rhasspy/rhasspy/releases/download/v2.5.10/rhasspy_2.5.10_armhf.deb
 sudo apt install -y ./rhasspy_2.5.10_armhf.deb
-
-systemctl daemon-reload
-#sudo systemctl enable rhasspy.service
+sudo systemctl enable rhasspy.service

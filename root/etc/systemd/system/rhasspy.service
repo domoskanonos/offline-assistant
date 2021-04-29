@@ -1,6 +1,6 @@
 [Unit]
 Description=Rhasspy
-After=syslog.target network.target
+After=syslog.target network.target mosquitto.service
 
 [Service]
 Type=simple
