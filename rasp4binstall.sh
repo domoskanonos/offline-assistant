@@ -45,3 +45,14 @@ sudo apt-get install mpg123
 # install nginx
 sudo apt install -y nginx
 sudo service nginx start
+
+# install node red
+yes | bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+sudo systemctl enable nodered.service
+
+# install mosquitto
+sudo apt install -y mosquitto
+
+# install rhasspy     
+curl -LJO https://github.com/rhasspy/rhasspy/releases/download/v2.5.10/rhasspy_2.5.10_armhf.deb > rhasspy_2.5.10_armhf.deb
+sudo apt install -y ./rhasspy_2.5.10_armhf.deb
