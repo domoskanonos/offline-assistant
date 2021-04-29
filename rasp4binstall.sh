@@ -27,3 +27,10 @@ cd 4mics_hat
 source ~/env/bin/activate
 pip install numpy spidev gpiozero
 cd ..
+
+# install mp3 player
+sudo apt-get install mpg123
+
+# install node red
+yes | bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+sudo systemctl enable nodered.service
