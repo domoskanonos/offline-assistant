@@ -56,3 +56,9 @@ sudo apt install -y mosquitto
 # install rhasspy     
 curl -LJO https://github.com/rhasspy/rhasspy/releases/download/v2.5.10/rhasspy_2.5.10_armhf.deb > rhasspy_2.5.10_armhf.deb
 sudo apt install -y ./rhasspy_2.5.10_armhf.deb
+
+# install grafana
+wget https://github.com/fg2it/grafana-on-raspberry/releases/download/v5.1.4/grafana_5.1.4_armhf.deb
+sudo dpkg -i ./grafana_5.1.4_armhf.deb
+sudo /bin/systemctl daemon-reload
+sudo /bin/systemctl enable grafana-server
