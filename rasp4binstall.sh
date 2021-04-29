@@ -22,7 +22,11 @@ sudo ./install.sh
 cd ..
 
 # install respeaker led driver
-git clone https://github.com/respeaker/4mics_hat.git
+_4MIC_DIR="/etc/httpd/"
+if [ -d "$_4MIC_DIR" ]; then
+  echo "Installing 4MIC LED files in ${_4MIC_DIR}..."
+  git clone https://github.com/respeaker/4mics_hat.git
+fi
 cd 4mics_hat
 source ~/env/bin/activate
 pip install numpy spidev gpiozero
