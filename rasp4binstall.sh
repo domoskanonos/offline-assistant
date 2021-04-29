@@ -60,4 +60,4 @@ wget -O rhasspy_2.5.10_armhf.deb https://github.com/rhasspy/rhasspy/releases/dow
 sudo apt install -y ./rhasspy_2.5.10_armhf.deb
 
 systemctl daemon-reload
-sudo systemctl enable rhasspy.service
+#sudo systemctl enable rhasspy.service
