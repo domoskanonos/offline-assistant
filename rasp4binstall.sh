@@ -7,6 +7,18 @@ sudo apt install -y \
 # install git
 sudo apt install -y git
 
+# clone domoskanonos offline-server repo and copy root resources
+_OFFLINE_SERVER_DIR="/etc/httpd/"
+if [ -d "$_OFFLINE_SERVER_DIR" ]; then
+  echo "Installing offline-server in ${_OFFLINE_SERVER
+_DIR}..."
+  git clone https://github.com/domoskanonos/offline-assistant.git
+fi
+cd offline-assistant
+sudo cp ./root /
+cd ..
+
+
 # install python
 sudo apt install -y python3-pip
 sudo apt install -y python-dev
@@ -51,4 +63,4 @@ sudo apt install -y mosquitto
 curl -LJO https://github.com/rhasspy/rhasspy/releases/download/v2.5.10/rhasspy_2.5.10_armhf.deb > rhasspy_2.5.10_armhf.deb
 sudo apt install -y ./rhasspy_2.5.10_armhf.deb
 
-systemctl --user start rhasspy
+#systemctl --user start rhasspy
