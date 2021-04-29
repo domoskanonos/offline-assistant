@@ -65,3 +65,10 @@ sudo docker run --rm hello-world
 sudo apt install -y python3-pip libffi-dev
 sudo pip3 install docker-compose
 sudo usermod -aG docker pi
+
+# install domoskanonos offline-assistant repo and run docker-compose up
+git clone https://github.com/domoskanonos/offline-assistant.git
+cd offline-assistant
+sudo ./run.sh
+sudo ./stop.sh
+cd ..
