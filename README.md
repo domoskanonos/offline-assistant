@@ -10,6 +10,12 @@
 
 yes | bash <(curl -sL https://raw.githubusercontent.com/domoskanonos/offline-assistant/main/rasp4binstall.sh)
 
+
+wenn connection lost soll prozess weiter laufen mit nohub geht das:
+ nohup yes | bash <(curl -sL https://raw.githubusercontent.com/domoskanonos/offline-assistant/main/rasp4binstall.sh)
+
+
+
 to install on a rasperry pi 4b use the script:
     rasp4binstall.sh
 
