@@ -19,39 +19,36 @@ wenn connection lost soll prozess weiter laufen mit nohub geht das:
 to install on a rasperry pi 4b use the script:
     rasp4binstall.sh
 
-# run
-docker-compose --env-file ./env.conf up --remove-orphans 
-
-# run detached
-docker-compose --env-file ./env.conf up -d --remove-orphans 
-
-# stop
-docker-compose down --remove-orphans
-
-
-## nextcloud config
-    user=root
-    host=offline-server-mariadb
-
-port 3306
-
-db nextcloud
-
-Node Red Volumen Rights to set !! Important
-    
-    /sudo chown -R 1000:1000 home/pi/_store/node-red/data
-
-
-Netzwerkprobleme Docker:
-https://www.youtube.com/watch?v=TeKKExBWiog
-
-
 
 
 zim File for Wiki
 #- DOWNLOAD=https://ftp.fau.de/kiwix/zim/wikipedia/wikipedia_de_top_maxi_2021-03.zim
 
 
-journalctl -u service-name.service
 
-/usr/lib/rhasspy/share/rhassp
+# systemd commands
+## get a list of services
+    systemd-analyze blame
+
+## read service log
+    journalctl -u rhasspy.service
+
+## edit service file
+sudo nano /etc/systemd/system/rhasspy.service
+
+## service execute commands
+    sudo systemctl enable rhasspy.service
+    sudo systemctl stop rhasspy.service
+    sudo systemctl start rhasspy.service
+    sudo systemctl restart rhasspy.service
+
+
+# start rhasspy from command line
+    rhasspy --profile de
+
+# audio commands
+## check audio
+    arecord -L
+
+## test audio
+    aplay ./offline-assistant/test.wav
