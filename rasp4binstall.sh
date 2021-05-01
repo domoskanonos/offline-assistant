@@ -10,9 +10,13 @@ sudo apt install -y git
 # install python3 and python3 package manager pip and moduls
 sudo apt install python3
 sudo apt install python3-pip
+
+# install python3 led modules
 sudo apt install python3-rpi.gpi
-pip3 install paho-mqtt
 pip3 install gpiozero
+
+# install led python3 service helper modules
+pip3 install paho-mqtt
 pip3 install pixel-ring
 
 # install python 2 modules
