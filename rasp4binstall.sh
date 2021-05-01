@@ -17,12 +17,14 @@ sudo apt install -y git
 #pip install numpy spidev gpiozero
 #pip3 install numpy spidev gpiozero
 
+# install python3 and python3 package manager pip
+sudo apt install python3
 sudo apt install python3-pip
 pip3 install paho-mqtt
 pip3 install gpiozero
 pip3 install pixel-ring
 
-# clone domoskanonos offline-server repo and copy root resources
+# clone domoskanonos offline-assistant repo and copy root resources
 if [ -d "~/offline-assistant" ]; then rm -Rf ~/offline-assistant; fi
 git clone https://github.com/domoskanonos/offline-assistant.git
 cd offline-assistant
@@ -52,8 +54,7 @@ sudo apt-get install mpg123
 mpg123 ./offline-assistant/test.mp3
 
 # install led service
-#pip3 install pixel-ring paho-mqtt
-#systemctl enable --now led.service
+systemctl enable --now led.service
 
 # install nginx
 sudo apt install -y nginx
