@@ -7,12 +7,18 @@ sudo apt upgrade -y
 # install git
 sudo apt install -y git
 
-# install python3 and python3 package manager pip
+# install python3 and python3 package manager pip and moduls
 sudo apt install python3
 sudo apt install python3-pip
 pip3 install paho-mqtt
 pip3 install gpiozero
 pip3 install pixel-ring
+
+# install python 2 modules
+sudo apt-get install python-pip
+pip install numpy
+pip install spidev
+pip install gpiozero
 
 # clone domoskanonos offline-assistant repo and copy root resources
 if [ -d "~/offline-assistant" ]; then rm -Rf ~/offline-assistant; fi
