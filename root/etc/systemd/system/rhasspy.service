@@ -1,14 +1,15 @@
 [Unit]
 Description=Rhasspy
-After=syslog.target network.target mosquitto.service
+After=syslog.target network.target mosquitto.service seeed-voicecard.service
 
 [Service]
 Type=simple
 WorkingDirectory=/usr/bin
-ExecStart=rhasspy --profile de
+ExecStart=/bin/bash -c 'rhasspy --profile de 2>&1 | cat'
 
-RestartSec=1
+RestartSec=5
 Restart=on-failure
+User=pi
 
 StandardOutput=syslog
 StandardError=syslog

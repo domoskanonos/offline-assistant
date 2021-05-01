@@ -17,6 +17,9 @@
     "microphone": {
         "system": "pyaudio"
     },
+    "mqtt": {
+        "enabled": "true"
+    },
     "sounds": {
         "system": "aplay"
     },

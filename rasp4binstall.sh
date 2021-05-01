@@ -46,6 +46,8 @@ systemctl enable --now led.service
 # install mp3 player
 sudo apt-get install mpg123
 
+aplay ./offline-assistant/test.wav
+
 # install nginx
 sudo apt install -y nginx
 sudo service nginx start
