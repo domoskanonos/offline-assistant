@@ -2,20 +2,10 @@
 
 # update system
 sudo apt update
-sudo apt install -y \
+sudo apt upgrade -y
 
 # install git
 sudo apt install -y git
-
-# install python
-#sudo apt install -y python3-pip
-#sudo apt install -y python-dev
-# install python-virtualenv
-#sudo apt install python-virtualenv
-#virtualenv --system-site-packages ~/env
-#source ~/env/bin/activate
-#pip install numpy spidev gpiozero
-#pip3 install numpy spidev gpiozero
 
 # install python3 and python3 package manager pip
 sudo apt install python3
