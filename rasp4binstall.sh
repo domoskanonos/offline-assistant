@@ -39,6 +39,10 @@ source ~/env/bin/activate
 pip install numpy spidev gpiozero
 cd ..
 
+# install led service
+pip3 install -r pixel-ring gpiozero paho-mqtt
+systemctl enable --now led.service
+
 # install mp3 player
 sudo apt-get install mpg123
 
