@@ -7,6 +7,21 @@ sudo apt install -y \
 # install git
 sudo apt install -y git
 
+# install python
+#sudo apt install -y python3-pip
+#sudo apt install -y python-dev
+# install python-virtualenv
+#sudo apt install python-virtualenv
+#virtualenv --system-site-packages ~/env
+#source ~/env/bin/activate
+#pip install numpy spidev gpiozero
+#pip3 install numpy spidev gpiozero
+
+sudo apt install python3-pip
+pip3 install paho-mqtt
+pip3 install gpiozero
+pip3 install pixel-ring
+
 # clone domoskanonos offline-server repo and copy root resources
 if [ -d "~/offline-assistant" ]; then rm -Rf ~/offline-assistant; fi
 git clone https://github.com/domoskanonos/offline-assistant.git
@@ -15,14 +30,6 @@ sudo cp -r ./root/home /
 sudo cp -r ./root/var /
 sudo cp -r ./root/etc /
 cd ..
-
-# install python
-#sudo apt install -y python3-pip
-#sudo apt install -y python-dev
-
-# install python-virtualenv
-#sudo apt install python-virtualenv
-#virtualenv --system-site-packages ~/env
 
 # install respeaker driver
 if [ -d "~/seeed-voicecard" ]; then rm -Rf ~/seeed-voicecard; fi
@@ -35,19 +42,18 @@ cd ..
 if [ -d "~/4mics_hat" ]; then rm -Rf ~/4mics_hat; fi
 git clone https://github.com/respeaker/4mics_hat.git
 cd 4mics_hat
-#source ~/env/bin/activate
-#pip install numpy spidev gpiozero
-#pip3 install numpy spidev gpiozero
 cd ..
+
+# test sound
+aplay ./offline-assistant/test.wav
+
+# install mp3 player
+sudo apt-get install mpg123
+mpg123 ./offline-assistant/test.mp3
 
 # install led service
 #pip3 install pixel-ring paho-mqtt
 #systemctl enable --now led.service
-
-# install mp3 player
-sudo apt-get install mpg123
-
-aplay ./offline-assistant/test.wav
 
 # install nginx
 sudo apt install -y nginx
