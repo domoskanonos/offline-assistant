@@ -27,4 +27,31 @@
 # scan wlan
     sudo iwlist wlan0 scan
 
+# systemd commands
+## get a list of services
+    systemd-analyze blame
 
+## read service log
+    journalctl -u <service-name>
+
+## edit service file
+sudo nano /etc/systemd/system/<service-name>
+
+## service execute commands
+    sudo systemctl enable <service-name>
+    sudo systemctl stop <service-name>
+    sudo systemctl start <service-name>
+    sudo systemctl restart <service-name>
+
+# start rhasspy from command line
+    rhasspy --profile de
+
+# audio commands
+## check audio
+    arecord -L
+
+## test audio wav
+    aplay ./offline-assistant/test.wav
+
+## test audio mp3
+    mpg123 ./offline-assistant/test.mp3
