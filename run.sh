@@ -1,1 +1,0 @@
-docker-compose --env-file ./env.conf up -d --remove-orphans 
