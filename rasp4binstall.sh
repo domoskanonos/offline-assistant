@@ -17,12 +17,12 @@ sudo cp -r ./root/etc /
 cd ..
 
 # install python
-sudo apt install -y python3-pip
-sudo apt install -y python-dev
+#sudo apt install -y python3-pip
+#sudo apt install -y python-dev
 
 # install python-virtualenv
-sudo apt install python-virtualenv
-virtualenv --system-site-packages ~/env
+#sudo apt install python-virtualenv
+#virtualenv --system-site-packages ~/env
 
 # install respeaker driver
 if [ -d "~/seeed-voicecard" ]; then rm -Rf ~/seeed-voicecard; fi
@@ -35,13 +35,14 @@ cd ..
 if [ -d "~/4mics_hat" ]; then rm -Rf ~/4mics_hat; fi
 git clone https://github.com/respeaker/4mics_hat.git
 cd 4mics_hat
-source ~/env/bin/activate
-pip install numpy spidev gpiozero
+#source ~/env/bin/activate
+#pip install numpy spidev gpiozero
+#pip3 install numpy spidev gpiozero
 cd ..
 
 # install led service
-pip3 install -r pixel-ring gpiozero paho-mqtt
-systemctl enable --now led.service
+#pip3 install pixel-ring paho-mqtt
+#systemctl enable --now led.service
 
 # install mp3 player
 sudo apt-get install mpg123
