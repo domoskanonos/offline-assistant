@@ -1,0 +1,6 @@
+engine: "rhasspy"
+pathToConfig: "/home/pi/.config/rhasspy/profiles/de/profile.json"
+hardware: "respeaker4"
+pattern: "alexa"
+enableDoA: true
+mqttPort: "1883"

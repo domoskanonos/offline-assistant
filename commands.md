@@ -58,3 +58,9 @@ sudo nano /etc/systemd/system/<service-name>
 
 # read logfile continuously
     sudo tail -f /var/log/syslog
+
+# MQTT
+## subscriber
+    mosquitto_sub -v -t 'test/topic'
+## publisher
+    mosquitto_pub -t 'test/topic' -m 'helloWorld'
