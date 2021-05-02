@@ -55,3 +55,6 @@ sudo nano /etc/systemd/system/<service-name>
 
 ## test audio mp3
     mpg123 ./offline-assistant/test.mp3
+
+# read logfile continuously
+    sudo tail -f /var/log/syslog
