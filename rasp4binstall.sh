@@ -57,8 +57,8 @@ sudo ./hlc_download.sh
 aplay ./offline-assistant/test.wav
 
 # install mp3 player
-sudo apt-get install mpg123
-mpg123 ./offline-assistant/test.mp3
+sudo apt install -y vlc
+cvlc --aout=alsa --alsa-audio-device=bluealsa ./offline-assistant/test.mp3
 
 # install led service
 systemctl enable --now led.service

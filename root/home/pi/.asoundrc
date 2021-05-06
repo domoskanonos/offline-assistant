@@ -1,0 +1,29 @@
+
+pcm.!default {
+  type asym
+  playback.pcm {
+    type plug
+    slave.pcm "output"
+  }
+  capture.pcm {
+    type plug
+    slave.pcm "input"
+  }
+}
+
+pcm.output {
+  type hw
+  card 0
+}
+
+ctl.!default {
+  type hw
+  card 0
+}
+
+pcm.!default "bluealsa"
+ctl.!default "bluealsa"
+defaults.bluealsa.interface "hci0"
+defaults.bluealsa.device "F8:5C:7D:0F:F7:81"
+defaults.bluealsa.profile "a2dp"
+defaults.bluealsa.delay 10000
