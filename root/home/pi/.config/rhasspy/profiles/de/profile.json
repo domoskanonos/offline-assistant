@@ -12,7 +12,7 @@
         "fuzzywuzzy": {
             "min_confidence": "0.5"
         },
-        "system": "fsticuffs"
+        "system": "fuzzywuzzy"
     },
     "microphone": {
         "system": "pyaudio"
@@ -21,21 +21,32 @@
         "enabled": "true"
     },
     "sounds": {
-        "system": "aplay"
+        "command": {
+            "play_arguments": [
+                "-D",
+                "bluealsa:DEV=F8:5C:7D:0F:F7:81,PROFILE=sco"
+            ],
+            "play_program": "aplay"
+        },
+        "system": "command"
     },
     "speech_to_text": {
-        "system": "pocketsphinx"
+        "system": "kaldi"
     },
     "text_to_speech": {
+        "larynx": {
+            "vocoder": "vctk_small"
+        },
         "marytts": {
             "locale": "de",
             "voice": "bits1-hsmm"
         },
-        "system": "nanotts"
+        "system": "opentts"
     },
     "wake": {
         "porcupine": {
-            "keyword_path": "computer_raspberry-pi.ppn"
+            "keyword_path": "computer_raspberry-pi.ppn",
+            "sensitivity": "1"
         },
         "raven": {
             "keywords": {
@@ -66,7 +77,8 @@
                 "hello.wav": {
                     "enabled": true
                 }
-            }
+            },
+            "probability_threshold": "0.5"
         },
         "system": "raven"
     }
